@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "updated": "2026-06-18",
+  "note": "Design preview only. Source URLs and row content are synthetic placeholders.",
+  "sources": {
+    "evaluations": {
+      "type": "workbook",
+      "url": "#demo-evaluations-source",
+      "pull_rule": "Demo source: pull evaluation rows that reference markdown files with YYYY/MM/DD text.",
+      "manual_entries": true
+    },
+    "probable_requirements": {
+      "type": "workbook",
+      "url": "#demo-probable-source",
+      "pull_rule": "Demo source: pull Probable requirement rows and preserve validation status across refreshes.",
+      "manual_entries": true
+    },
+    "release_updates": {
+      "type": "release-notes",
+      "url": "#demo-release-source",
+      "pull_rule": "Demo source: pull release update rows and normalize release, title, status, note, and source.",
+      "manual_entries": true
+    },
+    "testing_results": {
+      "type": "testing-tracker",
+      "url": "#demo-testing-source",
+      "pull_rule": "Demo source: pull release testing rows and normalize feature, result, tested prompt, and demo-use notes.",
+      "manual_entries": true
+    },
+    "capabilities": {
+      "type": "capability-workbook",
+      "url": "#demo-capability-source",
+      "pull_rule": "Demo source: pull topic, current capability, match phrases, SC guidance, and last updated. Grade fields are excluded.",
+      "manual_entries": true
+    }
+  }
+}

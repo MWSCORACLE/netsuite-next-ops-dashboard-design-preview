@@ -1,0 +1,178 @@
+{
+  "generatedAt": "2026-06-19T01:00:00.000Z",
+  "generatedAtLabel": "Demo preview data",
+  "sources": {
+    "evaluations": {
+      "type": "workbook",
+      "url": "#demo-evaluations-source",
+      "pull_rule": "Demo source: pull evaluation rows that reference markdown files with YYYY/MM/DD text.",
+      "manual_entries": true
+    },
+    "probable_requirements": {
+      "type": "workbook",
+      "url": "#demo-probable-source",
+      "pull_rule": "Demo source: pull Probable requirement rows and preserve validation status across refreshes.",
+      "manual_entries": true
+    },
+    "release_updates": {
+      "type": "release-notes",
+      "url": "#demo-release-source",
+      "pull_rule": "Demo source: pull release update rows and normalize release, title, status, note, and source.",
+      "manual_entries": true
+    },
+    "testing_results": {
+      "type": "testing-tracker",
+      "url": "#demo-testing-source",
+      "pull_rule": "Demo source: pull release testing rows and normalize feature, result, tested prompt, and demo-use notes.",
+      "manual_entries": true
+    },
+    "capabilities": {
+      "type": "capability-workbook",
+      "url": "#demo-capability-source",
+      "pull_rule": "Demo source: pull topic, current capability, match phrases, SC guidance, and last updated. Grade fields are excluded.",
+      "manual_entries": true
+    }
+  },
+  "changes": [
+    {
+      "at": "Demo preview",
+      "type": "Refresh",
+      "text": "Generated design preview data from synthetic sample records."
+    },
+    {
+      "at": "Demo preview",
+      "type": "Manual",
+      "text": "One Probable requirement was marked Product Validated and queued for workbook update."
+    }
+  ],
+  "evaluations": [
+    {
+      "id": "eval-demo-001",
+      "customer": "Sample Services Co.",
+      "title": "Sample Services Co. - NetSuite Next Evaluation",
+      "date": "2026-06-18",
+      "grade": "B / Yellow",
+      "score": "76%",
+      "opportunityStatus": "SC Reviewing",
+      "recommendation": "Proceed after SC review if the initial scope stays focused on core financials and standard integrations.",
+      "source": "#demo-evaluation-001",
+      "manual": false
+    },
+    {
+      "id": "eval-demo-002",
+      "customer": "Example Manufacturing Group",
+      "title": "Example Manufacturing Group - NetSuite Next Evaluation",
+      "date": "2026-06-17",
+      "grade": "C / Red",
+      "score": "58%",
+      "opportunityStatus": "Product Review Needed",
+      "recommendation": "Hold until product validates advanced manufacturing and integration requirements.",
+      "source": "#demo-evaluation-002",
+      "manual": false
+    }
+  ],
+  "probable": [
+    {
+      "id": "prob-demo-001",
+      "requirement": "Payroll summary imported by CSV",
+      "customer": "Sample Services Co.",
+      "reason": "Marked Probable because the workflow keeps payroll processing outside NetSuite and only requires summarized journal or import data.",
+      "validationStatus": "Outstanding",
+      "workbookUpdateStatus": "Not started",
+      "source": "#demo-probable-001",
+      "manual": false
+    },
+    {
+      "id": "prob-demo-002",
+      "requirement": "Expense platform integration",
+      "customer": "Sample Services Co.",
+      "reason": "Marked Probable because integrations may be supportable, but the exact records, fields, ownership, and data placement need product confirmation.",
+      "validationStatus": "Product Validated",
+      "workbookUpdateStatus": "Queued",
+      "source": "#demo-probable-002",
+      "manual": false
+    },
+    {
+      "id": "prob-demo-003",
+      "requirement": "External banking connector",
+      "customer": "Example Manufacturing Group",
+      "reason": "Marked Probable because the requirement could map to a supported connector pattern, but depends on the exact banking method and file/API path.",
+      "validationStatus": "Outstanding",
+      "workbookUpdateStatus": "Not started",
+      "source": "#demo-probable-003",
+      "manual": false
+    }
+  ],
+  "releases": [
+    {
+      "id": "rel-demo-001",
+      "release": "2026.1.5",
+      "title": "Navigation and Test Drive Improvements",
+      "status": "Captured",
+      "note": "Sample release note showing a navigation update that may improve demo readiness.",
+      "source": "Demo Release Updates",
+      "manual": false
+    },
+    {
+      "id": "rel-demo-002",
+      "release": "2026.1.6",
+      "title": "Financials Workflow Polish",
+      "status": "WIP",
+      "note": "Sample release note for a work-in-progress capability that should stay out of standard demos until testing is complete.",
+      "source": "Demo Release Updates",
+      "manual": false
+    }
+  ],
+  "testing": [
+    {
+      "id": "test-demo-001",
+      "feature": "Bank feeds walkthrough",
+      "result": "Passed",
+      "prompt": "Validate standard bank-feed setup and reconciliation demo flow.",
+      "demoUse": "Ready for standard financials demo path.",
+      "source": "Demo Testing Results",
+      "manual": false
+    },
+    {
+      "id": "test-demo-002",
+      "feature": "Custom integration handoff",
+      "result": "Needs Review",
+      "prompt": "Validate whether the integration pattern is supported for the requested customer workflow.",
+      "demoUse": "Use only as a scoped discovery conversation until product confirms.",
+      "source": "Demo Testing Results",
+      "manual": false
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "cap-demo-001",
+      "topic": "Core financials",
+      "capability": "General ledger and financial reporting",
+      "matchPhrases": "GL, financial reports, period close",
+      "scGuidance": "Supported for standard financials-first evaluation paths.",
+      "lastUpdated": "2026-06-18",
+      "source": "Demo Capability Workbook",
+      "manual": false
+    },
+    {
+      "id": "cap-demo-002",
+      "topic": "Banking",
+      "capability": "Standard bank feeds",
+      "matchPhrases": "bank feeds, reconciliation, cash management",
+      "scGuidance": "Use standard bank-feed positioning unless the customer requires a non-standard connector.",
+      "lastUpdated": "2026-06-18",
+      "source": "Demo Capability Workbook",
+      "manual": false
+    },
+    {
+      "id": "cap-demo-003",
+      "topic": "Integrations",
+      "capability": "External application integration",
+      "matchPhrases": "CSV, API, connector, middleware",
+      "scGuidance": "Route through product validation when customer success depends on a specific integration method.",
+      "lastUpdated": "2026-06-18",
+      "source": "Demo Capability Workbook",
+      "manual": false
+    }
+  ]
+}

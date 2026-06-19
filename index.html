@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NetSuite Next Operating Dashboard</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Dashboard sections">
+        <div class="brand-block">
+          <span class="brand-mark">N</span>
+          <div>
+            <strong>Next Ops</strong>
+            <span>Consolidated tracker</span>
+          </div>
+        </div>
+        <nav id="sectionNav" class="section-nav"></nav>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div>
+            <h1 id="pageTitle">Overview</h1>
+            <p id="pageSubtitle">Recent changes, refresh status, and product-validation work queue.</p>
+          </div>
+          <div class="topbar-actions">
+            <button id="refreshButton" type="button" class="secondary-button">Record Refresh</button>
+            <button id="addRowButton" type="button">Add Row</button>
+          </div>
+        </header>
+
+        <section id="overviewView" class="view active" aria-labelledby="pageTitle">
+          <div class="status-band">
+            <article>
+              <span>Last refresh</span>
+              <strong id="lastRefresh">Not recorded</strong>
+              <p id="refreshSource">Manual workspace snapshot</p>
+            </article>
+            <article>
+              <span>Recent changes</span>
+              <strong id="changeCount">0</strong>
+              <p>Manual entries, status moves, and cleared rows.</p>
+            </article>
+            <article>
+              <span>Open product validations</span>
+              <strong id="openProbables">0</strong>
+              <p>Probable requirements still requiring product review.</p>
+            </article>
+            <article>
+              <span>Workbook prompts</span>
+              <strong id="workbookPrompts">0</strong>
+              <p>Validated items waiting for feature-validation updates.</p>
+            </article>
+          </div>
+
+          <div class="overview-grid">
+            <section class="panel">
+              <div class="panel-heading">
+                <h2>Recent Data Changes</h2>
+                <span id="recentChangeLabel">Latest activity</span>
+              </div>
+              <div id="recentChanges" class="activity-list"></div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-heading">
+                <h2>Workbook Update Queue</h2>
+                <span>Product-confirmed support</span>
+              </div>
+              <div id="workbookQueue" class="queue-list"></div>
+            </section>
+
+            <section class="panel source-panel">
+              <div class="panel-heading">
+                <h2>Source Inventory</h2>
+                <span>Tracked inputs</span>
+              </div>
+              <div id="sourceInventory" class="source-list"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="tableView" class="view" aria-label="Dashboard data table">
+          <div id="filtersPanel" class="filters-panel"></div>
+          <div class="table-panel">
+            <div class="table-meta">
+              <strong id="tableTitle">Rows</strong>
+              <span id="rowCount">0 rows</span>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead id="tableHead"></thead>
+                <tbody id="tableBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="rowDialog">
+      <form id="rowForm" method="dialog">
+        <div class="dialog-heading">
+          <div>
+            <h2 id="dialogTitle">Add Row</h2>
+            <p id="dialogSubtitle">Manual entries are stored locally until a source writeback workflow is added.</p>
+          </div>
+          <button class="icon-button" type="button" id="closeDialog" aria-label="Close">x</button>
+        </div>
+        <div id="formFields" class="form-grid"></div>
+        <menu>
+          <button type="button" class="secondary-button" id="cancelDialog">Cancel</button>
+          <button type="submit">Save Row</button>
+        </menu>
+      </form>
+    </dialog>
+
+    <script src="./data/dashboard-data.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
